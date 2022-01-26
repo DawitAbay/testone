@@ -38,6 +38,7 @@
     "init": "concurrently \"npm start\" \"npm run json-server\"",
     "deploy": "aws  s3 sync build/ s3://dev-pass-project.s3"
   },
+  "proxy":"http://localhost:3000",
   "eslintConfig": {
     "extends": [
       "react-app",

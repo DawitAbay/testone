@@ -12,6 +12,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import About_Read_APTable from "./pages/About_Read_AP";
 import Read_AGB from "./pages/Read_AGB";
 
+
 import ErrorBoundary from "./components/ErrorBoundary";
 import useFetch from "./components/customHooks/useFetch";
 import reducer from "./components/reducer/reducer";
@@ -69,7 +70,7 @@ const TableDataProps2 = { dispatch, finalTextResponse,  baseURLtoDBTableData};
            
             <Route
               exact
-              path="/"
+              path="/Home"
               element={
                 isLoading ? <CircularProgress /> :
                   
