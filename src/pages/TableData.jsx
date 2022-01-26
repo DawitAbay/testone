@@ -138,12 +138,15 @@ const TableData = () => {
   };
 
   const style = {
-    color: yellow["50"],
+    color: red["50"],
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: 400,
+    maxWidth: "95%",
+    minWidth: matches ? "80%" : "50%",
+    maxHeight: "95vh",
+    // maxWidth: "90vw",
     // bgcolor: 'background.paper',
     bgcolor: grey[800],
     // backgroundColor: 'background.paper',
@@ -153,8 +156,6 @@ const TableData = () => {
     p: 3,
     textAlign: "center",
     overflow: matches ? "scroll" : "auto",
-    minWidth: matches ? "80%" : "50%",
-
   };
 
   // const handleEditRowsModelChange = useCallback(
@@ -204,8 +205,9 @@ const TableData = () => {
       style={{
         // height: "80vh",
         height: "calc(80vh - 5vmin)",
-        maxHeight: "85vh",
-        width: "100%",
+        maxHeight: "100vh",
+        maxwidth: "150%",
+
       }}
     > Conting Assembly Page
       <DataGrid
@@ -238,7 +240,9 @@ const TableData = () => {
           backgroundColor: "#eef5ee",
           marginTop: "10px",
           marginLeft: "-360px",
-          width: "160%"
+          width: "160%",
+          overflow: "revert",
+
         }}
         rowHeight={35}
         headerHeight={70}

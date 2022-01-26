@@ -42,15 +42,21 @@ const useStyles = makeStyles({
     ".MuiDataGrid-root .MuiDataGrid-viewport": {
       "max-height": "none !important",
     },
-    ".MuiDataGrid-root": { height: "auto !important " },
+    ".MuiDataGrid-root": { height: "auto !important" },
   },
   headersAndCells: {
-
+    // autoHeight: "true",
+    // fontWeight: 700,
+    // height: "400px",
+    // headerHeight: "300px",
     "& .MuiDataGrid-columnHeaderTitle": {
       // "& .data-grid-header": {
-      fontWeight: 550,
-      color: grey[700],
-
+      fontWeight: 700,
+      color: red[900],
+      // headerHeight: 300,
+      // headerHeight: "300px",
+      // autoHeight: "true",
+      // height: 400,
       lineHeight: "1rem",
       whiteSpace: "normal",
       wordWrap: "break-word",
@@ -58,14 +64,16 @@ const useStyles = makeStyles({
       // flexWrap: "wrap",
     },
     "& .MuiDataGrid-cell": {
+      // "& .MuiDataGrid-root .MuiDataGrid-cell": {
       fontWeight: 500,
-
+      // display: "flex",
+      // lineHeight: "1rem",
+      // whiteSpace: "normal !important",
+      // wordWrap: "break-word !important",
+      // overflow: "visible !important",
     },
     "& .id": {
       backgroundColor: lightBlue[100],
-    },
-    "& .SAA_Sample": {
-      backgroundColor: teal[500],
     },
     "& .gray": {
       backgroundColor: grey[100],
@@ -131,7 +139,7 @@ const DataTable = ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: "95%",
+    maxWidth: "95vw",
     minWidth: matches ? "80%" : "50%",
     maxHeight: "95vh",
     // maxWidth: "90vw",
@@ -202,6 +210,7 @@ const DataTable = ({
       "& div": {
         whiteSpace: "normal",
         wordWrap: "break-word",
+        overflow: "visible",
       },
     },
   };
@@ -213,6 +222,7 @@ const DataTable = ({
         height: "calc(80vh - 5vmin)",
         maxHeight: "85vh",
         width: "100%",
+        overflow: "visible",
 
       }}
       className={classes.headersAndCells}
@@ -235,6 +245,7 @@ const DataTable = ({
         onEditRowsModelChange={handleEditRowsModelChange}
         onRowEditCommit={editRowCommit}
         autoHeight={true}
+        autoWidth={true}
         components={{
           Toolbar: GridToolbar,
         }}
@@ -255,10 +266,12 @@ const DataTable = ({
           backgroundColor: "#eef5ee",
           marginTop: "10px",
           marginLeft: "-360px",
-          width: "160%"
+          width: "160%",
+          overflow: "visible",
         }}
         rowHeight={35}
         headerHeight={70}
+
 
       />
       <ModalComp

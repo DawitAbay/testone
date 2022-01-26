@@ -41,7 +41,16 @@ const useColumnsdata3 = (handleOpen) => {
           overflow: "visible",
           lineHeight: "1.43rem",
           whiteSpace: "normal",
-        },
+        },"&::-webkit-scrollbar": {
+          width: 20
+          },
+          "&::-webkit-scrollbar-track": {
+          backgroundColor: "orange"
+          },
+          "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "red",
+          borderRadius: 2
+          }
        
       },
     }),

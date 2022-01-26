@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
             <MenuComp menuItems={menuItems} />
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               PASS
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}  >
+              <Typography variant="h6" component="div"   >
                 Poliovirus Assessment by Sequenc Screening
               </Typography>
 

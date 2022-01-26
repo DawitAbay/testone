@@ -138,12 +138,15 @@ const Read_AGB_Read_AP = () => {
   };
 
   const style = {
-    color: yellow["50"],
+    color: red["50"],
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: 400,
+    maxWidth: "95%",
+    minWidth: matches ? "80%" : "50%",
+    maxHeight: "95vh",
+    // maxWidth: "90vw",
     // bgcolor: 'background.paper',
     bgcolor: grey[800],
     // backgroundColor: 'background.paper',
@@ -153,8 +156,6 @@ const Read_AGB_Read_AP = () => {
     p: 3,
     textAlign: "center",
     overflow: matches ? "scroll" : "auto",
-    minWidth: matches ? "800%" : "50%",
-
   };
 
   // const handleEditRowsModelChange = useCallback(
@@ -202,10 +203,11 @@ const Read_AGB_Read_AP = () => {
   return (
     <div
       style={{
-        height: "80vh",
+        height: "800vh",
         height: "calc(80vh - 5vmin)",
         maxHeight: "85vh",
         width: "100%",
+
 
       }}
     >
@@ -221,7 +223,9 @@ const Read_AGB_Read_AP = () => {
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         checkboxSelection
         editMode="row"
+
         autoHeight={true}
+        autoWidth={true}
         components={{
           Toolbar: GridToolbar,
         }}
@@ -240,10 +244,11 @@ const Read_AGB_Read_AP = () => {
           backgroundColor: "#eef5ee",
           marginTop: "10px",
           marginLeft: "-360px",
-          width: "160%"
+          width: "160%",
+          overflow: "auto"
         }}
-        rowHeight={35}
-        headerHeight={70}
+        rowHeight={30}
+        headerHeight={40}
 
       />
       <ModalComp

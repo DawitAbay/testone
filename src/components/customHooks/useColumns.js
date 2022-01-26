@@ -41,7 +41,16 @@ const useColumns = (handleOpen) => {
           overflow: "visible",
           lineHeight: "1.43rem",
           whiteSpace: "normal",
-        },
+        },"&::-webkit-scrollbar": {
+          width: 20
+          },
+          "&::-webkit-scrollbar-track": {
+          backgroundColor: "orange"
+          },
+          "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "red",
+          borderRadius: 2
+          }
        
       },
     }),
@@ -54,7 +63,7 @@ const useColumns = (handleOpen) => {
     customHeaderCell: {
       whiteSpace: "normal",
       wordWrap: "break-word",
-      overflow: "visible",
+      //overflow: "visible",
 
       flexWrap: "wrap",
       // lineHeight: "2rem",

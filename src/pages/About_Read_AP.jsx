@@ -49,7 +49,7 @@ const About_Read_AP_Read_AP = () => {
   const isMounted = useRef(true);
   // store row data after editing
   const [editRowData, setEditRowData] = useState({});
-  const matches = useMediaQuery("(max-height:500px)");
+  const matches = useMediaQuery("(max-height:50px)");
 
   const [About_Read_AP, setAbout_Read_AP] = useState([])
   useEffect(() => {
@@ -138,12 +138,15 @@ const About_Read_AP_Read_AP = () => {
   };
 
   const style = {
-    color: yellow["50"],
+    color: red["50"],
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: 400,
+    maxWidth: "95Vw",
+    minWidth: matches ? "80%" : "50%",
+    maxHeight: "95vh",
+    // maxWidth: "90vw",
     // bgcolor: 'background.paper',
     bgcolor: grey[800],
     // backgroundColor: 'background.paper',
@@ -153,8 +156,6 @@ const About_Read_AP_Read_AP = () => {
     p: 3,
     textAlign: "center",
     overflow: matches ? "scroll" : "auto",
-    minWidth: matches ? "80%" : "50%",
-
   };
 
   // const handleEditRowsModelChange = useCallback(
@@ -206,6 +207,8 @@ const About_Read_AP_Read_AP = () => {
         height: "calc(80vh - 5vmin)",
         maxHeight: "85vh",
         width: "100%",
+        height: "max-content"
+
 
       }}
     >
@@ -217,6 +220,7 @@ const About_Read_AP_Read_AP = () => {
 
         columns={columny}
         pagination
+
         pageSize={pageSize}
         rowsPerPageOptions={[10, 20, 40, 80, 100]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
@@ -237,14 +241,14 @@ const About_Read_AP_Read_AP = () => {
         }
 
         style={{
-          padding: "10px",
+          padding: "1px",
           backgroundColor: "#eef5ee",
           marginTop: "10px",
           marginLeft: "-360px",
           width: "160%"
         }}
         rowHeight={35}
-        headerHeight={70}
+        headerHeight={50}
 
       />
       <ModalComp
