@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
               </Typography>
 
 
-              <Button variant="contained" color="success" size="medium" href="/"  >
+              <Button variant="contained" color="success" size="medium" href="/Home"  >
                 Take Me Home
               </Button>
 

@@ -32,6 +32,7 @@ import datadb from "../components/fakeDB/datadb.json";
 // import ErrorBoundary from "../components/ErrorBoundary";
 import ModalComp from "../components/ModalComp";
 import useColumnsdata2 from "../components/customHooks/useColumnsdata2";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const TableData = () => {
   console.log("DataTable Comp.");
@@ -48,11 +49,11 @@ const TableData = () => {
   const isMounted = useRef(true);
   // store row data after editing
   const [editRowData, setEditRowData] = useState({});
-
+  const matches = useMediaQuery("(max-height:500px)");
 
   const [tableData, setTableData] = useState([])
   useEffect(() => {
-    fetch("http://localhost:8001/data2")
+    fetch("http://localhost:3001/data2")
       .then((data) => data.json())
       .then((data) => setTableData(data))
 
@@ -69,7 +70,7 @@ const TableData = () => {
           //   if (isMounted) {
           if (isMounted.current) {
             // if (res.statusText !== "OK") {
-            if (res.status < 200 || res.status > 299) {
+            if (res.status < 200 || res.status > 300) {
               throw Error("Could not fetch data from that resource!");
               // console.log("Could not fetch data from that resource!");
             }
@@ -151,6 +152,9 @@ const TableData = () => {
     boxShadow: 24,
     p: 3,
     textAlign: "center",
+    overflow: matches ? "scroll" : "auto",
+    minWidth: matches ? "80%" : "50%",
+
   };
 
   // const handleEditRowsModelChange = useCallback(
@@ -211,7 +215,7 @@ const TableData = () => {
         columns={columny}
         pagination
         pageSize={pageSize}
-        rowsPerPageOptions={[10, 20, 40, 80, 100]}
+        rowsPerPageOptions={[5, 10, 20, 40, 100]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         checkboxSelection
         editMode="row"

@@ -256,13 +256,6 @@ const useColumns = (handleOpen) => {
       },
     },
     {
-      field: "location",
-      headerName: "location",
-      width: 130,
-      editable: true,
-      type: "string",
-      },
-    {
       field: "comment",
       headerName: "comment",
       width: 130,

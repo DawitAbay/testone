@@ -32,6 +32,7 @@ import datadb from "../components/fakeDB/datadb.json";
 // import ErrorBoundary from "../components/ErrorBoundary";
 import ModalComp from "../components/ModalComp";
 import useColumnsdata4 from "../components/customHooks/useColumnsdata4";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Read_AGB_Read_AP = () => {
   console.log("DataTable Comp.");
@@ -48,11 +49,11 @@ const Read_AGB_Read_AP = () => {
   const isMounted = useRef(true);
   // store row data after editing
   const [editRowData, setEditRowData] = useState({});
-
+  const matches = useMediaQuery("(max-height:500px)");
 
   const [Read_AGB, setRead_AGB] = useState([])
   useEffect(() => {
-    fetch("http://localhost:8001/data4")
+    fetch("http://localhost:3001/data4")
       .then((data) => data.json())
       .then((data) => setRead_AGB(data))
 
@@ -151,6 +152,9 @@ const Read_AGB_Read_AP = () => {
     boxShadow: 24,
     p: 3,
     textAlign: "center",
+    overflow: matches ? "scroll" : "auto",
+    minWidth: matches ? "800%" : "50%",
+
   };
 
   // const handleEditRowsModelChange = useCallback(
@@ -198,7 +202,7 @@ const Read_AGB_Read_AP = () => {
   return (
     <div
       style={{
-        // height: "80vh",
+        height: "80vh",
         height: "calc(80vh - 5vmin)",
         maxHeight: "85vh",
         width: "100%",

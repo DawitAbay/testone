@@ -65,7 +65,7 @@ const ModalComp = ({ style, handleDelete, handleClose, modalOpen, params }) => {
                 textAlign: "left",
                 color: "palegoldenrod",
                 mt: 1,
-                // overflow: "scroll",
+                overflow: "scroll",
               }}
             >
               {row_to_del &&

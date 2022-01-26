@@ -42,7 +42,7 @@ const useStyles = makeStyles({
     ".MuiDataGrid-root .MuiDataGrid-viewport": {
       "max-height": "none !important",
     },
-    ".MuiDataGrid-root": { height: "auto !important" },
+    ".MuiDataGrid-root": { height: "auto !important " },
   },
   headersAndCells: {
 
