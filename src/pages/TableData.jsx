@@ -52,7 +52,7 @@ const TableData = () => {
 
   const [tableData, setTableData] = useState([])
   useEffect(() => {
-    fetch("http://localhost:8000/data2")
+    fetch("http://localhost:8001/data2")
       .then((data) => data.json())
       .then((data) => setTableData(data))
 

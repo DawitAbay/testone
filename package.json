@@ -30,15 +30,16 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently --kill-others \"react-scripts start\" \"npx json-server --watch data/db.json --port 8001\"",
+
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server --watch data/db.json --port 8000",
+    "json-server": "json-server --watch data/db.json --port 8001",
     "init": "concurrently \"npm start\" \"npm run json-server\"",
     "deploy": "aws  s3 sync build/ s3://dev-pass-project.s3"
   },
-  "proxy":"http://localhost:3000",
+  
   "eslintConfig": {
     "extends": [
       "react-app",
