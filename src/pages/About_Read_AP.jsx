@@ -53,7 +53,7 @@ const About_Read_AP_Read_AP = () => {
 
   const [About_Read_AP, setAbout_Read_AP] = useState([])
   useEffect(() => {
-    fetch("http://localhost:3001/data3")
+    fetch("https://api.jsonbin.io/b/61f1cce41960493ad18318e8")
       .then((data) => data.json())
       .then((data) => setAbout_Read_AP(data))
 

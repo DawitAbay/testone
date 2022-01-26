@@ -53,7 +53,7 @@ const Read_AGB_Read_AP = () => {
 
   const [Read_AGB, setRead_AGB] = useState([])
   useEffect(() => {
-    fetch("http://localhost:3001/data4")
+    fetch("https://api.jsonbin.io/b/61f1ce301960493ad1831957")
       .then((data) => data.json())
       .then((data) => setRead_AGB(data))
 

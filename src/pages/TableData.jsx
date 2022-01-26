@@ -34,6 +34,8 @@ import ModalComp from "../components/ModalComp";
 import useColumnsdata2 from "../components/customHooks/useColumnsdata2";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+
+
 const TableData = () => {
   console.log("DataTable Comp.");
   // const DataTable = ({ columns, rows }) => {
@@ -53,7 +55,7 @@ const TableData = () => {
 
   const [tableData, setTableData] = useState([])
   useEffect(() => {
-    fetch("http://localhost:3001/data2")
+    fetch("https://api.jsonbin.io/b/61f1cd971960493ad183192e")
       .then((data) => data.json())
       .then((data) => setTableData(data))
 
