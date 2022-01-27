@@ -35,6 +35,7 @@ import useColumnsdata3 from "../components/customHooks/useColumnsdata3";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import PreviewIcon from '@mui/icons-material/Preview';
 import { GridActionsCellItem } from "@mui/x-data-grid";
+
 const Rows = [
   {
     id: 1,
@@ -96,7 +97,7 @@ const Rows = [
 
 ]
 
-const About_Read_AP_Read_AP = () => {
+const About_Read_AP = () => {
   console.log("DataTable Comp.");
   // const DataTable = ({ columns, rows }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -500,4 +501,4 @@ const About_Read_AP_Read_AP = () => {
 
 
 
-export default About_Read_AP_Read_AP;
+export default About_Read_AP;

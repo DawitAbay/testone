@@ -9,7 +9,7 @@ import {
 
 } from "@mui/material/colors";
 import CircularProgress from '@mui/material/CircularProgress';
-import About_Read_APTable from "./pages/About_Read_AP";
+import About_Read_AP from "./pages/About_Read_AP";
 import Read_AGB from "./pages/Read_AGB";
 
 
@@ -90,7 +90,7 @@ const dataTableProps = { dispatch, finalTextResponse, baseURLtoDBTableData };
             
             <Route path="/data" element={<TableData />}></Route>
 
-            <Route  path="/About_Read_AP" element={ <About_Read_APTable/>}></Route>
+            <Route  path="/About_Read_AP" element={ <About_Read_AP/>}></Route>
             <Route  path="/Read_AGB" element={ <Read_AGB/>}></Route>
           </Routes>
           

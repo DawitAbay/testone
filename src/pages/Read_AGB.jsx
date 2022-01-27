@@ -91,7 +91,7 @@ const Rows = [
 
 ]
 
-const Read_AGB_Read_AP = () => {
+const Read_AGB = () => {
   console.log("DataTable Comp.");
   // const DataTable = ({ columns, rows }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -479,4 +479,4 @@ const Read_AGB_Read_AP = () => {
 
 
 
-export default Read_AGB_Read_AP;
+export default Read_AGB;
