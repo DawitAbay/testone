@@ -1,5 +1,5 @@
-  
-  const rows = [
+  const rowsData = () => {
+  const rowsData1 = [
     {
       id:"1",
       SAA_Sample: "SAA0000001",
@@ -128,3 +128,5 @@
     },
     
     ];
+
+  }

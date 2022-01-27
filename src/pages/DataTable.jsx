@@ -33,55 +33,142 @@ import PreviewIcon from '@mui/icons-material/Preview';
 import { GridActionsCellItem } from "@mui/x-data-grid";
 import { format } from "date-fns";
 import { Link } from 'react-router-dom';
-
+import rowsData1 from "../components/fakeDB/rows"
 import Button from '@mui/material/Button';
 
 const Rows = [
 
   {
-    id: 1,
+    id: "1",
     SAA_Sample: "SAA0000001",
     Labels: "No Result",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
-    Read_hit_count: 454644,
-    Read_AP: "Open New Table",
+    Read_hit_count: "R-2151",
+    Read_AP: "No Result",
     Read_AGB: "No Result",
-    Conting_A: "",
-    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
     SAA_Release_Date: "Mon, Dec 6, 2021",
-
-    comment: ""
+    comment: "No Result"
   },
   {
-    id: 2,
+    id: "2",
     SAA_Sample: "SAA0000002",
     Labels: "No Result",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
-    PP_hits: "No",
-    Read_hit_count: 454645,
-    Read_AP: "Open New Table",
+    PP_hits: "No Result",
+    Read_hit_count: "R-2150",
+    Read_AP: "No Result",
     Read_AGB: "No Result",
-    Conting_A: "",
+    Conting_A: "75635",
     B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
     SAA_Release_Date: "Tue, Dec 7, 2021",
-    comment: ""
+    comment: "No Result"
   },
   {
-    id: 3,
+    id: "3",
     SAA_Sample: "SAA0000003",
     Labels: "No Result",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
-    Read_hit_count: 454646,
-    Read_AP: "Open New Table",
+    Read_hit_count: "R-2149",
+    Read_AP: "No Result",
     Read_AGB: "No Result",
-    Conting_A: 86337,
+    Conting_A: "75635",
     B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
     SAA_Release_Date: "Wed, Dec 8, 2021",
-    comment: ""
+    comment: "No Result"
   },
+  {
+    id: "4",
+    SAA_Sample: "SAA0000004",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "Yes",
+    Read_hit_count: "R-2148",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Thu, Dec 9, 2021",
+    comment: "No Result"
+  },
+  {
+    id: "5",
+    SAA_Sample: "SAA0000005",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "Yes",
+    Read_hit_count: "R-2147",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Fri, Dec 10, 2021",
+    comment: "No Result"
+  },
+  {
+    id: "6",
+    SAA_Sample: "SAA0000006",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "No",
+    Read_hit_count: "R-2146",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Sat, Dec 11, 2021",
+    comment: "No Result"
+  },
+  {
+    id: "7",
+    SAA_Sample: "SAA0000007",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "No",
+    Read_hit_count: "R-2145",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Sun, Dec 12, 2021",
+    comment: "No Result"
+  },
+  {
+    id: "8",
+    SAA_Sample: "SAA0000008",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "No",
+    Read_hit_count: "R-2144",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Mon, Dec 13, 2021",
+    comment: "No Result"
+  },
+  {
+    id: "9",
+    SAA_Sample: "SAA0000009",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "No",
+    Read_hit_count: "R-2143",
+    Read_AP: "No Result",
+    Read_AGB: "No Result",
+    Conting_A: "75635",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Tue, Dec 14, 2021",
+    comment: "No Result"
+  },
+
 ]
+
+
+
 // const defaultTheme = createTheme();
 const useStyles = makeStyles({
   cellHeight: {
@@ -174,7 +261,7 @@ const DataTable = ({
     {
       field: "id",
       headerName: "ID",
-      width: 10,
+      width: "136",
       headerClassName: "data-grid-header",
     },
     {
@@ -182,7 +269,7 @@ const DataTable = ({
       field: "SAA_Sample",
       headerName: "SAA_Sample",
       headerAlign: "right",
-      width: 150,
+      width: "136",
       // height: 'max-content',
       // error: true,
       editable: true,
@@ -193,7 +280,7 @@ const DataTable = ({
       headerName: "Labels",
       type: "string",
       headerAlign: "center",
-      width: 150,
+      width: "136",
       editable: true,
       headerClassName: "data-grid-header",
     },
@@ -202,7 +289,7 @@ const DataTable = ({
       headerName: "location_hit",
       type: "string",
       // headerAlign: "center",
-      width: 150,
+      width: "136",
       editable: true,
       headerClassName: "data-grid-header",
 
@@ -212,7 +299,7 @@ const DataTable = ({
       headerName: "PP_hits",
       headerAlign: "left",
       type: "string",
-      width: 100,
+      width: "136",
       headerClassName: "data-grid-header",
       align: "left",
 
@@ -222,7 +309,7 @@ const DataTable = ({
       headerName: "Read_hit_count",
       headerAlign: "center",
       align: "left",
-      width: 150,
+      width: "136",
       editable: true,
       headerClassName: "data-grid-header",
       type: "string",
@@ -234,7 +321,7 @@ const DataTable = ({
       headerName: "Read_AP",
       type: "string",
       // headerAlign: "center",
-      width: 150,
+      width: "136",
       headerClassName: "data-grid-header",
       align: "left",
       renderCell: (params) => {
@@ -255,7 +342,7 @@ const DataTable = ({
     {
       field: "Read_AGB",
       headerName: "Read_AGB",
-      width: 150,
+      width: "136",
       editable: true,
       align: "left",
       type: "string",
@@ -276,7 +363,7 @@ const DataTable = ({
     {
       field: "Conting_A",
       headerName: "Conting_A",
-      width: 150,
+      width: "136",
       editable: true,
       type: "string",
       align: "left",
@@ -296,7 +383,7 @@ const DataTable = ({
       headerName: "B_Sample_info",
       headeralign: "center",
       align: "left",
-      width: 150,
+      width: "136",
       type: "string",
       editable: true,
     },
@@ -305,7 +392,7 @@ const DataTable = ({
       headerName: "SAA_Release_Date",
       type: 'date',
       align: "left",
-      width: 150,
+      width: "136",
       editable: true,
       // valueFormatter for displaying
       valueFormatter: (params) => {
@@ -322,7 +409,7 @@ const DataTable = ({
     {
       field: "comment",
       headerName: "comment",
-      width: 130,
+      width: "136",
       editable: true,
       type: "string",
     },
@@ -330,9 +417,9 @@ const DataTable = ({
     {
       field: "action",
       type: "action",
-      width: 130,
+      width: "136",
       color: "red",
-      headerName: "PREVIEW SELECTED ROW",
+      headerName: "PREVIEW ",
       sortable: false,
       renderCell: (params) => {
 

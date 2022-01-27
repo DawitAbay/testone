@@ -167,7 +167,7 @@ const Read_AGB = () => {
     {
       field: "id",
       headerName: "ID",
-      width: 10,
+      width: "110",
       headerClassName: "data-grid-header",
     },
     {
@@ -175,7 +175,7 @@ const Read_AGB = () => {
       field: "seqid",
       headerName: "seqid",
       headerAlign: "right",
-      width: 150,
+      width: "110",
       // height: 'max-content',
       // error: true,
       editable: true,
@@ -186,7 +186,7 @@ const Read_AGB = () => {
       headerName: "sseqid",
       type: "string",
       headerAlign: "center",
-      width: 150,
+      width: "110",
       editable: true,
       headerClassName: "data-grid-header",
     },
@@ -195,7 +195,7 @@ const Read_AGB = () => {
       headerName: "pident",
       type: "string",
       // headerAlign: "center",
-      width: 150,
+      width: "110",
       editable: true,
       headerClassName: "data-grid-header",
 
@@ -205,7 +205,7 @@ const Read_AGB = () => {
       headerName: "qlen",
       headerAlign: "left",
       type: "string",
-      width: 100,
+      width: "110",
       headerClassName: "data-grid-header",
       align: "left",
 
@@ -215,7 +215,7 @@ const Read_AGB = () => {
       headerName: "lenght",
       headerAlign: "center",
       align: "left",
-      width: 150,
+      width: "110",
       editable: true,
       headerClassName: "data-grid-header",
       type: "string",
@@ -227,14 +227,14 @@ const Read_AGB = () => {
       headerName: "mismatch",
       type: "string",
       // headerAlign: "center",
-      width: 150,
+      width: "110",
       headerClassName: "data-grid-header",
       align: "left",
     },
     {
       field: "gapopen",
       headerName: "gapopen",
-      width: 150,
+      width: "110",
       editable: true,
       align: "left",
       type: "string",
@@ -243,7 +243,7 @@ const Read_AGB = () => {
     {
       field: "qstart",
       headerName: "qstart",
-      width: 150,
+      width: "110",
       editable: true,
       type: "string",
       align: "left",
@@ -253,7 +253,7 @@ const Read_AGB = () => {
       headerName: "qend",
       headeralign: "center",
       align: "left",
-      width: 150,
+      width: "110",
       type: "string",
       editable: true,
     },
@@ -262,7 +262,7 @@ const Read_AGB = () => {
       headerName: "sstart",
       type: 'string',
       align: "left",
-      width: 150,
+      width: "110",
       editable: true,
 
 
@@ -271,21 +271,21 @@ const Read_AGB = () => {
     {
       field: "send",
       headerName: "send",
-      width: 130,
+      width: "110",
       editable: true,
       type: "string",
     },
     {
       field: "evalue",
       headerName: "evalue",
-      width: 130,
+      width: "110",
       editable: true,
       type: "string",
     },
     {
       field: "bitscore",
       headerName: "bitscore",
-      width: 130,
+      width: "110",
       editable: true,
       type: "string",
     },
@@ -293,16 +293,16 @@ const Read_AGB = () => {
     {
       field: "Sequence",
       headerName: "Sequence",
-      width: 130,
+      width: "110",
       editable: true,
       type: "string",
     },
     {
       field: "action",
       type: "string",
-      width: 130,
+      width: "110",
       color: "red",
-      headerName: "PREVIEW SELECTED ROW",
+      headerName: "PREVIEW ",
       renderCell: (params) => {
 
         return (

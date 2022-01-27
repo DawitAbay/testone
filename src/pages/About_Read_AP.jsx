@@ -174,15 +174,19 @@ const About_Read_AP = () => {
     {
       field: "id",
       headerName: "ID",
-      width: 10,
-      headerClassName: "data-grid-header",
+      headerAlign: "left",
+      align: "left",
+      width: "100",
+      //// headerClassName: "data-grid-header",
+
     },
     {
 
       field: "qseq_id",
       headerName: "qseq_id",
-      headerAlign: "right",
-      width: 150,
+      headerAlign: "left",
+      align: "left",
+      width: "100",
       // height: 'max-content',
       // error: true,
       editable: true,
@@ -192,39 +196,41 @@ const About_Read_AP = () => {
       field: "pident",
       headerName: "pident",
       type: "string",
-      headerAlign: "center",
-      width: 150,
+      headerAlign: "left",
+      align: "left",
+      width: "100",
       editable: true,
-      headerClassName: "data-grid-header",
+      // // headerClassName: "data-grid-header",
     },
     {
       field: "qlen",
       headerName: "qlen",
       type: "string",
-      // headerAlign: "center",
-      width: 150,
+      headerAlign: "left",
+      align: "left",
+      width: "100",
       editable: true,
-      headerClassName: "data-grid-header",
+      // // headerClassName: "data-grid-header",
 
     },
     {
       field: "Leng",
       headerName: "Leng",
-      headerAlign: "left",
+      headerAlign: "center",
       type: "string",
-      width: 100,
-      headerClassName: "data-grid-header",
-      align: "left",
+      width: "100",
+      // headerClassName: "data-grid-header",
+      align: "center",
 
     },
     {
       field: "mm",
       headerName: "mm",
-      headerAlign: "center",
+      headerAlign: "left",
       align: "left",
-      width: 150,
+      width: "100",
       editable: true,
-      headerClassName: "data-grid-header",
+      // headerClassName: "data-grid-header",
       type: "string",
       valueOptions: [0, 5, 8, 23],
 
@@ -233,16 +239,18 @@ const About_Read_AP = () => {
       field: "gap",
       headerName: "gap",
       type: "string",
-      // headerAlign: "center",
-      width: 150,
-      headerClassName: "data-grid-header",
+      headerAlign: "left",
       align: "left",
+      width: "100",
+      // headerClassName: "data-grid-header",
+      align: "center",
     },
     {
       field: "qstart",
       headerName: "qstart",
-      width: 150,
+      width: "100",
       editable: true,
+      headerAlign: "left",
       align: "left",
       type: "string",
 
@@ -250,17 +258,18 @@ const About_Read_AP = () => {
     {
       field: "qend",
       headerName: "qend",
-      width: 150,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
       align: "left",
     },
     {
       field: "sstart",
       headerName: "sstart",
-      headeralign: "center",
+      headerAlign: "left",
       align: "left",
-      width: 150,
+      width: "100",
       type: "string",
       editable: true,
     },
@@ -268,8 +277,9 @@ const About_Read_AP = () => {
       field: "Send",
       headerName: "Send",
       type: 'string',
+      headerAlign: "left",
       align: "left",
-      width: 150,
+      width: "100",
       editable: true,
 
 
@@ -278,50 +288,64 @@ const About_Read_AP = () => {
     {
       field: "evalue",
       headerName: "evalue",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "bit",
       headerName: "bit",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "poltype",
       headerName: "poltype",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "polstart",
       headerName: "polstart",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "polend",
       headerName: "polend",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "Sequence",
       headerName: "Sequence",
-      width: 130,
+      width: "100",
       editable: true,
       type: "string",
+      headerAlign: "left",
+      align: "left",
     },
     {
       field: "action",
       type: "string",
-      width: 130,
+      width: "100",
       color: "red",
+      headerAlign: "left",
+      align: "left",
       headerName: "PREVIEW SELECTED ROW",
       renderCell: (params) => {
 
@@ -445,7 +469,6 @@ const About_Read_AP = () => {
         width: "100%",
         height: "max-content"
 
-
       }}
     >
       Read Alimnment to polio
@@ -456,7 +479,7 @@ const About_Read_AP = () => {
 
         columns={columns}
         pagination
-
+        backgroundColor=""
         pageSize={pageSize}
         rowsPerPageOptions={[10, 20, 40, 80, 100]}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
@@ -478,7 +501,9 @@ const About_Read_AP = () => {
 
         style={{
           padding: "1px",
-          backgroundColor: "#eef5ee",
+          backgroundColor: "white",
+          border: "2px solid red",
+
           marginTop: "10px",
           marginLeft: "-360px",
           width: "160%"
@@ -487,6 +512,7 @@ const About_Read_AP = () => {
         headerHeight={50}
 
       />
+
       <ModalComp
         style={style}
         handleDelete={handleDeleteClick}
