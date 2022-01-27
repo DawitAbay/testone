@@ -30,7 +30,7 @@ const menuItems = [
     path: "/data",
   },
   {
-    text: "Read_AP",
+    text: "About_Read_AP",
     icon: <StorageRounded />,
     path: "/About_Read_AP",
   },

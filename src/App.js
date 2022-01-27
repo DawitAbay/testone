@@ -51,7 +51,6 @@ function App() {
 
   
 const dataTableProps = { dispatch, finalTextResponse, baseURLtoDBTableData };
-const TableDataProps2 = { dispatch, finalTextResponse,  baseURLtoDBTableData};
 
 
 
@@ -89,13 +88,7 @@ const TableDataProps2 = { dispatch, finalTextResponse,  baseURLtoDBTableData};
            
 
             
-            <Route exact path="/data" element={isLoading ? <CircularProgress /> :
-                  
-                  <TableData
-                    rows={rows}
-                    dataTableProps={TableDataProps2}
-                  
-                  />}></Route>
+            <Route path="/data" element={<TableData />}></Route>
 
             <Route  path="/About_Read_AP" element={ <About_Read_APTable/>}></Route>
             <Route  path="/Read_AGB" element={ <Read_AGB/>}></Route>
