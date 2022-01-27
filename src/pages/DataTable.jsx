@@ -245,7 +245,7 @@ const DataTable = ({
           <>
 
             {/* <Link href={`/About_Read_AP?id=${params.id}`} target="_blank">Profile</Link> */}
-            <Button variant="outlined" size="medium" href="/About_Read_AP"  >
+            <Button variant="outlined" size="medium" component={Link} to={'/About_Read_AP'}   >
               View
             </Button>
           </>
@@ -265,7 +265,7 @@ const DataTable = ({
 
         return (
           <>
-            <Button component={Link} to={'/Read_AGB'}>View</Button>
+            <Button variant="outlined" size="medium" component={Link} to={'/Read_AGB'}>View</Button>
 
 
           </>
@@ -284,7 +284,7 @@ const DataTable = ({
         return (
           <>
 
-            <Button variant="outlined" size="medium" href="/TableData">
+            <Button variant="outlined" size="medium" component={Link} to={'/TableData'} >
               View
             </Button>
           </>
