@@ -32,6 +32,7 @@ import useColumns from "../components/customHooks/useColumns";
 import PreviewIcon from '@mui/icons-material/Preview';
 import { GridActionsCellItem } from "@mui/x-data-grid";
 import { format } from "date-fns";
+import { Link } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 
@@ -264,10 +265,9 @@ const DataTable = ({
 
         return (
           <>
+            <Button component={Link} to={'/Read_AGB'}>View</Button>
 
-            <Button variant="outlined" size="medium" href="/Read_AGB">
-              View
-            </Button>
+
           </>
         );
       }
