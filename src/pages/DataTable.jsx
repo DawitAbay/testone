@@ -284,7 +284,7 @@ const DataTable = ({
         return (
           <>
 
-            <Button variant="outlined" size="medium" href="/data">
+            <Button variant="outlined" size="medium" href="/TableData">
               View
             </Button>
           </>

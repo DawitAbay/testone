@@ -27,7 +27,7 @@ const menuItems = [
   {
     text: "Table data",
     icon: <StorageRounded />,
-    path: "/data",
+    path: "/TableData",
   },
   {
     text: "About_Read_AP",

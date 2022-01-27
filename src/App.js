@@ -88,7 +88,7 @@ const dataTableProps = { dispatch, finalTextResponse, baseURLtoDBTableData };
            
 
             
-            <Route path="/data" element={<TableData />}></Route>
+            <Route path="/TableData" element={<TableData />}></Route>
 
             <Route  path="/About_Read_AP" element={ <About_Read_AP/>}></Route>
             <Route  path="/Read_AGB" element={ <Read_AGB/>}></Route>
