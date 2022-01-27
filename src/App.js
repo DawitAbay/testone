@@ -70,7 +70,7 @@ const TableDataProps2 = { dispatch, finalTextResponse,  baseURLtoDBTableData};
            
             <Route
               exact
-              path="/Home"
+              path="/"
               element={
                 isLoading ? <CircularProgress /> :
                   

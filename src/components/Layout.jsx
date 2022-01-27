@@ -22,7 +22,7 @@ const menuItems = [
   {
     text: "Data table",
     icon: <StorageRounded />,
-    path: "/Home",
+    path: "/",
   },
   {
     text: "Table data",
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
               </Typography>
 
 
-              <Button variant="contained" color="success" size="medium" href="/Home"  >
+              <Button variant="contained" color="success" size="medium" href="/"  >
                 Take Me Home
               </Button>
 
