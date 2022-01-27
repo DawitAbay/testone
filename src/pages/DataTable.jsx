@@ -281,9 +281,6 @@ const DataTable = ({
       type: "string",
       align: "left",
       renderCell: (params) => {
-
-
-
         return (
           <>
 
