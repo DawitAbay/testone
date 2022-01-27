@@ -29,7 +29,58 @@ import {
 } from "../components/reducer/types";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useColumns from "../components/customHooks/useColumns";
+import PreviewIcon from '@mui/icons-material/Preview';
+import { GridActionsCellItem } from "@mui/x-data-grid";
+import { format } from "date-fns";
 
+import Button from '@mui/material/Button';
+
+const Rows = [
+
+  {
+    id: 1,
+    SAA_Sample: "SAA0000001",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "Yes",
+    Read_hit_count: 454644,
+    Read_AP: "Open New Table",
+    Read_AGB: "No Result",
+    Conting_A: "",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Mon, Dec 6, 2021",
+
+    comment: ""
+  },
+  {
+    id: 2,
+    SAA_Sample: "SAA0000002",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "No",
+    Read_hit_count: 454645,
+    Read_AP: "Open New Table",
+    Read_AGB: "No Result",
+    Conting_A: "",
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Tue, Dec 7, 2021",
+    comment: ""
+  },
+  {
+    id: 3,
+    SAA_Sample: "SAA0000003",
+    Labels: "No Result",
+    location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
+    PP_hits: "Yes",
+    Read_hit_count: 454646,
+    Read_AP: "Open New Table",
+    Read_AGB: "No Result",
+    Conting_A: 86337,
+    B_Sample_info: "his tutorial is a continuation of my node js react project. This will add a mongoose database using mongodb and stepping you through how to setup clusters, collections, and documents using mongodb, as well as using code to insert and look up data from the database.",
+    SAA_Release_Date: "Wed, Dec 8, 2021",
+    comment: ""
+  },
+]
 // const defaultTheme = createTheme();
 const useStyles = makeStyles({
   cellHeight: {
@@ -116,6 +167,197 @@ const DataTable = ({
   const columns = useMemo(() => {
     return columnsAll;
   }, []);
+
+  const columns1 = [
+
+    {
+      field: "id",
+      headerName: "ID",
+      width: 10,
+      headerClassName: "data-grid-header",
+    },
+    {
+
+      field: "SAA_Sample",
+      headerName: "SAA_Sample",
+      headerAlign: "right",
+      width: 150,
+      // height: 'max-content',
+      // error: true,
+      editable: true,
+
+    },
+    {
+      field: "Labels",
+      headerName: "Labels",
+      type: "string",
+      headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+    },
+    {
+      field: "location_hit",
+      headerName: "location_hit",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+
+    },
+    {
+      field: "PP_hits",
+      headerName: "PP_hits",
+      headerAlign: "left",
+      type: "string",
+      width: 100,
+      headerClassName: "data-grid-header",
+      align: "left",
+
+    },
+    {
+      field: "Read_hit_count",
+      headerName: "Read_hit_count",
+      headerAlign: "center",
+      align: "left",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+      type: "string",
+      valueOptions: [0, 5, 8, 23],
+
+    },
+    {
+      field: "Read_AP",
+      headerName: "Read_AP",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      headerClassName: "data-grid-header",
+      align: "left",
+      renderCell: (params) => {
+
+
+
+        return (
+          <>
+
+            {/* <Link href={`/About_Read_AP?id=${params.id}`} target="_blank">Profile</Link> */}
+            <Button variant="outlined" size="medium" href="/About_Read_AP"  >
+              View
+            </Button>
+          </>
+        );
+      }
+    },
+    {
+      field: "Read_AGB",
+      headerName: "Read_AGB",
+      width: 150,
+      editable: true,
+      align: "left",
+      type: "string",
+      renderCell: (params) => {
+
+
+
+        return (
+          <>
+
+            <Button variant="outlined" size="medium" href="/Read_AGB">
+              View
+            </Button>
+          </>
+        );
+      }
+
+    },
+    {
+      field: "Conting_A",
+      headerName: "Conting_A",
+      width: 150,
+      editable: true,
+      type: "string",
+      align: "left",
+      renderCell: (params) => {
+
+
+
+        return (
+          <>
+
+            <Button variant="outlined" size="medium" href="/data">
+              View
+            </Button>
+          </>
+        );
+      }
+    },
+    {
+      field: "B_Sample_info",
+      headerName: "B_Sample_info",
+      headeralign: "center",
+      align: "left",
+      width: 150,
+      type: "string",
+      editable: true,
+    },
+    {
+      field: "SAA_Release_Date",
+      headerName: "SAA_Release_Date",
+      type: 'date',
+      align: "left",
+      width: 150,
+      editable: true,
+      // valueFormatter for displaying
+      valueFormatter: (params) => {
+
+        return format(new Date(params.value), 'MM/dd/Y');
+
+      },
+
+      valueGetter: (params) => {
+
+        return format(new Date(params.value), 'MM/dd/Y');
+      },
+    },
+    {
+      field: "comment",
+      headerName: "comment",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+
+    {
+      field: "action",
+      type: "action",
+      width: 130,
+      color: "red",
+      headerName: "PREVIEW SELECTED ROW",
+      sortable: false,
+      renderCell: (params) => {
+
+
+
+        return (
+          <>
+
+            <GridActionsCellItem
+              icon={<PreviewIcon sx={{ align: "center", fontSize: 40 }} />}
+              label="VIEW"
+
+              onClick={() => handleOpen(params)}
+              color="inherit"
+            />
+          </>
+        );
+      },
+    },
+
+  ]
+
 
   const handleClose = () => setModalOpen(false);
 
@@ -233,8 +475,8 @@ const DataTable = ({
       <Typography>{finalTextResponse}</Typography>
       <DataGrid
 
-        rows={rows}
-        columns={columns}
+        rows={Rows}
+        columns={columns1}
         pagination
         pageSize={pageSize}
         rowsPerPageOptions={[10, 20, 40, 80, 100]}

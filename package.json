@@ -30,7 +30,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"react-scripts start\" \"npx json-server --watch data/db.json --port 3001\"",
+    "start": "react-scripts start",
 
     "build": "react-scripts build",
     "test": "react-scripts test",

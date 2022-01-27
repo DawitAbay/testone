@@ -1,6 +1,6 @@
-{
+
   
-  "data": [
+  [
     {
       "id":"1",
       "SAA_Sample": "SAA0000001",
@@ -716,4 +716,3 @@
       "comment": "No Result"
     }
   ]
-}

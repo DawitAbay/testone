@@ -7,16 +7,18 @@ import React, {
 } from "react";
 import {
   DataGrid,
-  GridToolbar
+  GridToolbar,
   // GridCellParams,
   // GridApi,
   // useGridApiRef,
   // esES,
   // GridToolbarContainer,
   // GridToolbarFilterButton,
-  // GridActionsCellItem,
+  GridActionsCellItem,
   // GridToolbarDensitySelector,
 } from "@mui/x-data-grid";
+import PreviewIcon from '@mui/icons-material/Preview';
+
 import { Typography } from "@mui/material";
 import {
   pink,
@@ -36,6 +38,70 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 
 
+const Rows = [
+  {
+    id: 1,
+    qseq_id: "Node_01",
+    Stitle: "Poli 2 strain sabin",
+    pid: 100,
+    Leng: 128,
+    qlen: 321,
+    Slen: 412,
+    mismatch: 0,
+    gapopen: 0,
+    qstart: 1,
+    qend: 258,
+    sstart: 78,
+    Send: 145,
+    evalue: 1.75e-57,
+    bitscore: 704,
+    sgi: 446546834,
+    Stands: 12083,
+    sblastnames: "Viruses"
+  },
+  {
+    id: 2,
+    qseq_id: "Node_02",
+    Stitle: "Poli 2 strain sabin",
+    pid: 101,
+    Leng: 129,
+    qlen: 322,
+    Slen: 413,
+    mismatch: 0,
+    gapopen: 0,
+    qstart: 1,
+    qend: 259,
+    sstart: 79,
+    Send: 146,
+    evalue: 1.75e-56,
+    bitscore: 705,
+    sgi: 446546835,
+    Stands: 12084,
+    sblastnames: "Viruses"
+  },
+  {
+    id: 3,
+    qseq_id: "Node_03",
+    Stitle: "Poli 2 strain sabin",
+    pid: 102,
+    Leng: 130,
+    qlen: 323,
+    Slen: 414,
+    mismatch: 0,
+    gapopen: 0,
+    qstart: 1,
+    qend: 260,
+    sstart: 80,
+    Send: 147,
+    evalue: 1.75e-55,
+    bitscore: 706,
+    sgi: 446546836,
+    Stands: 12085,
+    sblastnames: "Viruses"
+  },
+
+]
+
 const TableData = () => {
   console.log("DataTable Comp.");
   // const DataTable = ({ columns, rows }) => {
@@ -54,12 +120,12 @@ const TableData = () => {
   const matches = useMediaQuery("(max-height:500px)");
 
   const [tableData, setTableData] = useState([])
-  useEffect(() => {
-    fetch("https://api.jsonbin.io/b/61f1cd971960493ad183192e")
-      .then((data) => data.json())
-      .then((data) => setTableData(data))
+  // useEffect(() => {
+  //   fetch("https://api.jsonbin.io/b/61f1cd971960493ad183192e")
+  //     .then((data) => data.json())
+  //     .then((data) => setTableData(data))
 
-  }, []);
+  // }, []);
 
 
 
@@ -93,12 +159,12 @@ const TableData = () => {
 
 
 
+
   const handleOpen = (params) => {
     console.log("handleOpen Fn");
     set_row_params(params);
     setModalOpen(true);
   };
-
   // const columnsAll_Conting_A = useColumns(handleOpen, classes);
   const columnsAll_Conting_A = useColumnsdata2(handleOpen);
 
@@ -107,6 +173,179 @@ const TableData = () => {
     // return datadb;
     return columnsAll_Conting_A;
   }, []);
+
+
+  const columns = [
+    {
+      field: "id",
+      headerName: "ID",
+      width: 10,
+      headerClassName: "data-grid-header",
+    },
+    {
+
+      field: "qseq_id",
+      headerName: "qseq_id",
+      headerAlign: "right",
+      width: 150,
+      // height: 'max-content',
+      // error: true,
+      editable: true,
+
+    },
+    {
+      field: "Stitle",
+      headerName: "Stitle",
+      type: "string",
+      headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+    },
+    {
+      field: "pid",
+      headerName: "pid",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+
+    },
+    {
+      field: "Leng",
+      headerName: "Leng",
+      headerAlign: "left",
+      type: "string",
+      width: 100,
+      headerClassName: "data-grid-header",
+      align: "left",
+
+    },
+    {
+      field: "qlen",
+      headerName: "qlen",
+      headerAlign: "center",
+      align: "left",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+      type: "string",
+      valueOptions: [0, 5, 8, 23],
+
+    },
+    {
+      field: "Slen",
+      headerName: "Slen",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      headerClassName: "data-grid-header",
+      align: "left",
+    },
+    {
+      field: "mismatch",
+      headerName: "mismatch",
+      width: 150,
+      editable: true,
+      align: "left",
+      type: "string",
+
+    },
+    {
+      field: "gapopen",
+      headerName: "gapopen",
+      width: 150,
+      editable: true,
+      type: "string",
+      align: "left",
+    },
+    {
+      field: "qstart",
+      headerName: "qstart",
+      headeralign: "center",
+      align: "left",
+      width: 150,
+      type: "string",
+      editable: true,
+    },
+    {
+      field: "qend",
+      headerName: "qend",
+      type: 'string',
+      align: "left",
+      width: 150,
+      editable: true,
+
+
+
+    },
+    {
+      field: "sstart",
+      headerName: "sstart",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "Send",
+      headerName: "Send",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "bitscore",
+      headerName: "bitscore",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "sgi",
+      headerName: "sgi",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "Stands",
+      headerName: "Stands",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "sblastnames",
+      headerName: "sblastnames",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "action",
+      type: "string",
+      width: 130,
+      color: "red",
+      headerName: "PREVIEW SELECTED ROW",
+      renderCell: (params) => {
+        return (
+          <>
+
+            <GridActionsCellItem
+              icon={<PreviewIcon sx={{ align: "center", fontSize: 40 }} />}
+              label="VIEW"
+
+              onClick={() => handleOpen(params)}
+              color="inherit"
+            />
+          </>
+        );
+      },
+    },
+
+  ]
+
 
   const rows = useMemo(() => {
     // const rows = useCallback(() => {
@@ -214,9 +453,9 @@ const TableData = () => {
     > Conting Assembly Page
       <DataGrid
 
-        rows={tableData}
+        rows={Rows}
 
-        columns={columny}
+        columns={columns}
         pagination
         pageSize={pageSize}
         rowsPerPageOptions={[5, 10, 20, 40, 100]}

@@ -33,6 +33,68 @@ import datadb from "../components/fakeDB/datadb.json";
 import ModalComp from "../components/ModalComp";
 import useColumnsdata3 from "../components/customHooks/useColumnsdata3";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import PreviewIcon from '@mui/icons-material/Preview';
+import { GridActionsCellItem } from "@mui/x-data-grid";
+const Rows = [
+  {
+    id: 1,
+    qseq_id: "SRR54564",
+    pident: "3d pv1 sabin1 AY546445",
+    qlen: 100,
+    Leng: 500,
+    mm: 0,
+    gap: 0,
+    qstart: 0,
+    qend: 200,
+    sstart: 546,
+    Send: 654,
+    evalue: 1.94e-100,
+    bit: 67.8,
+    poltype: "PV1",
+    polstart: 975,
+    polend: 975,
+    Sequence: ""
+  },
+  {
+    id: 2,
+    qseq_id: "SRR54565",
+    pident: "3d pv1 sabin1 AY546446",
+    qlen: 100,
+    Leng: 501,
+    mm: 0,
+    gap: 0,
+    qstart: 1,
+    qend: 201,
+    sstart: 547,
+    Send: 655,
+    evalue: 1.94e-99,
+    bit: 67.9,
+    poltype: "PV2",
+    polstart: 976,
+    polend: 976,
+    Sequence: ""
+  },
+  {
+    id: 3,
+    qseq_id: "SRR54566",
+    pident: "3d pv1 sabin1 AY546447",
+    qlen: 100,
+    Leng: 502,
+    mm: 0,
+    gap: 0,
+    qstart: 2,
+    qend: 202,
+    sstart: 548,
+    Send: 656,
+    evalue: 1.94e-98,
+    bit: 68,
+    poltype: "PV1",
+    polstart: 977,
+    polend: 977,
+    Sequence: ""
+  },
+
+]
 
 const About_Read_AP_Read_AP = () => {
   console.log("DataTable Comp.");
@@ -53,11 +115,12 @@ const About_Read_AP_Read_AP = () => {
 
   const [About_Read_AP, setAbout_Read_AP] = useState([])
   useEffect(() => {
-    fetch("https://api.jsonbin.io/b/61f1cce41960493ad18318e8")
-      .then((data) => data.json())
-      .then((data) => setAbout_Read_AP(data))
-
-  }, []);
+    fetch("https://api.jsonbin.io/v3/b/61f1cce41960493ad18318e8")
+      .then(resp => resp.json())
+      .then(resp => {
+        setAbout_Read_AP(resp)
+      })
+  }, [])
 
 
 
@@ -106,6 +169,178 @@ const About_Read_AP_Read_AP = () => {
     return columnsAll_Read_AP;
   }, []);
 
+  const columns = [
+    {
+      field: "id",
+      headerName: "ID",
+      width: 10,
+      headerClassName: "data-grid-header",
+    },
+    {
+
+      field: "qseq_id",
+      headerName: "qseq_id",
+      headerAlign: "right",
+      width: 150,
+      // height: 'max-content',
+      // error: true,
+      editable: true,
+
+    },
+    {
+      field: "pident",
+      headerName: "pident",
+      type: "string",
+      headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+    },
+    {
+      field: "qlen",
+      headerName: "qlen",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+
+    },
+    {
+      field: "Leng",
+      headerName: "Leng",
+      headerAlign: "left",
+      type: "string",
+      width: 100,
+      headerClassName: "data-grid-header",
+      align: "left",
+
+    },
+    {
+      field: "mm",
+      headerName: "mm",
+      headerAlign: "center",
+      align: "left",
+      width: 150,
+      editable: true,
+      headerClassName: "data-grid-header",
+      type: "string",
+      valueOptions: [0, 5, 8, 23],
+
+    },
+    {
+      field: "gap",
+      headerName: "gap",
+      type: "string",
+      // headerAlign: "center",
+      width: 150,
+      headerClassName: "data-grid-header",
+      align: "left",
+    },
+    {
+      field: "qstart",
+      headerName: "qstart",
+      width: 150,
+      editable: true,
+      align: "left",
+      type: "string",
+
+    },
+    {
+      field: "qend",
+      headerName: "qend",
+      width: 150,
+      editable: true,
+      type: "string",
+      align: "left",
+    },
+    {
+      field: "sstart",
+      headerName: "sstart",
+      headeralign: "center",
+      align: "left",
+      width: 150,
+      type: "string",
+      editable: true,
+    },
+    {
+      field: "Send",
+      headerName: "Send",
+      type: 'string',
+      align: "left",
+      width: 150,
+      editable: true,
+
+
+
+    },
+    {
+      field: "evalue",
+      headerName: "evalue",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "bit",
+      headerName: "bit",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "poltype",
+      headerName: "poltype",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "polstart",
+      headerName: "polstart",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "polend",
+      headerName: "polend",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "Sequence",
+      headerName: "Sequence",
+      width: 130,
+      editable: true,
+      type: "string",
+    },
+    {
+      field: "action",
+      type: "string",
+      width: 130,
+      color: "red",
+      headerName: "PREVIEW SELECTED ROW",
+      renderCell: (params) => {
+
+
+
+        return (
+          <>
+
+            <GridActionsCellItem
+              icon={<PreviewIcon sx={{ align: "center", fontSize: 40 }} />}
+              label="VIEW"
+
+              onClick={() => handleOpen(params)}
+              color="inherit"
+            />
+          </>
+        );
+      },
+    },
+  ]
   const rows = useMemo(() => {
     // const rows = useCallback(() => {
     if (isMounted.current) {
@@ -216,9 +451,9 @@ const About_Read_AP_Read_AP = () => {
 
       <DataGrid
 
-        rows={About_Read_AP}
+        rows={Rows}
 
-        columns={columny}
+        columns={columns}
         pagination
 
         pageSize={pageSize}
