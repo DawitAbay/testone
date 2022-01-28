@@ -1756,13 +1756,13 @@ const Read_AGB = () => {
   const [editRowData, setEditRowData] = useState({});
   const matches = useMediaQuery("(max-height:500px)");
 
-  const [Read_AGB, setRead_AGB] = useState([])
-  useEffect(() => {
-    fetch("https://api.jsonbin.io/v3/b/61f1ce301960493ad1831957")
-      .then((data) => data.json())
-      .then((data) => setRead_AGB(data))
+  // const [Read_AGB, setRead_AGB] = useState([])
+  // useEffect(() => {
+  //   fetch("https://api.jsonbin.io/v3/b/61f1ce301960493ad1831957")
+  //     .then((data) => data.json())
+  //     .then((data) => setRead_AGB(data))
 
-  }, []);
+  // }, []);
 
 
 

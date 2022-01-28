@@ -2,11 +2,11 @@ import React, { useState, useCallback, useRef, useMemo } from "react";
 import {
   DataGrid,
   GridToolbar,
-
 } from "@mui/x-data-grid";
+import Chip from '@mui/material/Chip';
 import {
   red,
-
+  blue,
   lightBlue,
 
   teal,
@@ -35,7 +35,6 @@ import { format } from "date-fns";
 import { Link } from 'react-router-dom';
 import rowsData1 from "../components/fakeDB/rows"
 import Button from '@mui/material/Button';
-
 const Rows = [
 
   {
@@ -791,6 +790,15 @@ const useStyles = makeStyles({
     "& .gray": {
       backgroundColor: grey[100],
     },
+    status: {
+      fontWeight: 'bold',
+      fontSize: '0.75rem',
+      color: 'white',
+      backgroundColor: 'grey',
+      borderRadius: 8,
+      padding: '3px 10px',
+      display: 'inline-block'
+    }
   },
 });
 
@@ -829,7 +837,7 @@ const DataTable = ({
   const columns = useMemo(() => {
     return columnsAll;
   }, []);
-
+  const suggestions = ['Arkansas', 'Alabamba', 'Alaska', 'Arizona']
   const columns1 = [
 
     {
@@ -857,6 +865,15 @@ const DataTable = ({
       width: "136",
       editable: true,
       headerClassName: "data-grid-header",
+      renderCell: (params) => {
+        return (
+          <>
+            <Chip data={suggestions} label="success" color="success" />
+          </>
+
+        );
+      }
+
     },
     {
       field: "location_hit",
