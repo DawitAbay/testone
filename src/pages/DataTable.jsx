@@ -3,6 +3,7 @@ import {
   DataGrid,
   GridToolbar,
 } from "@mui/x-data-grid";
+
 import Chip from '@mui/material/Chip';
 import {
   red,
@@ -18,7 +19,6 @@ import {
 } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-import ErrorBoundary from "../components/ErrorBoundary";
 import ModalComp from "../components/ModalComp";
 import { Typography } from "@mui/material";
 import {
@@ -33,14 +33,18 @@ import PreviewIcon from '@mui/icons-material/Preview';
 import { GridActionsCellItem } from "@mui/x-data-grid";
 import { format } from "date-fns";
 import { Link } from 'react-router-dom';
-import rowsData1 from "../components/fakeDB/rows"
 import Button from '@mui/material/Button';
+import MenuItem from "@material-ui/core/MenuItem";
+import TextField from '@mui/material/TextField';
+import CheckIcon from '@mui/icons-material/Check';
+import Select from '@mui/material/Select';
+
 const Rows = [
 
   {
     id: 1,
     SAA_Sample: "SAA0000001",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454644,
@@ -54,7 +58,7 @@ const Rows = [
   {
     id: 2,
     SAA_Sample: "SAA0000002",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454645,
@@ -68,7 +72,7 @@ const Rows = [
   {
     id: 3,
     SAA_Sample: "SAA0000003",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454646,
@@ -82,7 +86,7 @@ const Rows = [
   {
     id: 4,
     SAA_Sample: "SAA0000004",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454647,
@@ -96,7 +100,7 @@ const Rows = [
   {
     id: 5,
     SAA_Sample: "SAA0000005",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454648,
@@ -110,7 +114,7 @@ const Rows = [
   {
     id: 6,
     SAA_Sample: "SAA0000006",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454649,
@@ -124,7 +128,7 @@ const Rows = [
   {
     id: 7,
     SAA_Sample: "SAA0000007",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454650,
@@ -138,7 +142,7 @@ const Rows = [
   {
     id: 8,
     SAA_Sample: "SAA0000008",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454651,
@@ -152,7 +156,7 @@ const Rows = [
   {
     id: 9,
     SAA_Sample: "SAA0000009",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454652,
@@ -166,7 +170,7 @@ const Rows = [
   {
     id: 10,
     SAA_Sample: "SAA0000010",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454653,
@@ -180,7 +184,7 @@ const Rows = [
   {
     id: 11,
     SAA_Sample: "SAA0000011",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454654,
@@ -194,7 +198,7 @@ const Rows = [
   {
     id: 12,
     SAA_Sample: "SAA0000012",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454655,
@@ -208,7 +212,7 @@ const Rows = [
   {
     id: 13,
     SAA_Sample: "SAA0000013",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454656,
@@ -222,7 +226,7 @@ const Rows = [
   {
     id: 14,
     SAA_Sample: "SAA0000014",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454657,
@@ -236,7 +240,7 @@ const Rows = [
   {
     id: 15,
     SAA_Sample: "SAA0000015",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454658,
@@ -250,7 +254,7 @@ const Rows = [
   {
     id: 16,
     SAA_Sample: "SAA0000016",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454659,
@@ -264,7 +268,7 @@ const Rows = [
   {
     id: 17,
     SAA_Sample: "SAA0000017",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454660,
@@ -278,7 +282,7 @@ const Rows = [
   {
     id: 18,
     SAA_Sample: "SAA0000018",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454661,
@@ -292,7 +296,7 @@ const Rows = [
   {
     id: 19,
     SAA_Sample: "SAA0000019",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454662,
@@ -306,7 +310,7 @@ const Rows = [
   {
     id: 20,
     SAA_Sample: "SAA0000020",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454663,
@@ -320,7 +324,7 @@ const Rows = [
   {
     id: 21,
     SAA_Sample: "SAA0000021",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454664,
@@ -334,7 +338,7 @@ const Rows = [
   {
     id: 22,
     SAA_Sample: "SAA0000022",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454665,
@@ -348,7 +352,7 @@ const Rows = [
   {
     id: 23,
     SAA_Sample: "SAA0000023",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454666,
@@ -362,7 +366,7 @@ const Rows = [
   {
     id: 24,
     SAA_Sample: "SAA0000024",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454667,
@@ -376,7 +380,7 @@ const Rows = [
   {
     id: 25,
     SAA_Sample: "SAA0000025",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454668,
@@ -390,7 +394,7 @@ const Rows = [
   {
     id: 26,
     SAA_Sample: "SAA0000026",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454669,
@@ -404,7 +408,7 @@ const Rows = [
   {
     id: 27,
     SAA_Sample: "SAA0000027",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454670,
@@ -418,7 +422,7 @@ const Rows = [
   {
     id: 28,
     SAA_Sample: "SAA0000028",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454671,
@@ -432,7 +436,7 @@ const Rows = [
   {
     id: 29,
     SAA_Sample: "SAA0000029",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454672,
@@ -446,7 +450,7 @@ const Rows = [
   {
     id: 30,
     SAA_Sample: "SAA0000030",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454673,
@@ -460,7 +464,7 @@ const Rows = [
   {
     id: 31,
     SAA_Sample: "SAA0000031",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454674,
@@ -474,7 +478,7 @@ const Rows = [
   {
     id: 32,
     SAA_Sample: "SAA0000032",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454675,
@@ -488,7 +492,7 @@ const Rows = [
   {
     id: 33,
     SAA_Sample: "SAA0000033",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454676,
@@ -502,7 +506,7 @@ const Rows = [
   {
     id: 34,
     SAA_Sample: "SAA0000034",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454677,
@@ -516,7 +520,7 @@ const Rows = [
   {
     id: 35,
     SAA_Sample: "SAA0000035",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454678,
@@ -530,7 +534,7 @@ const Rows = [
   {
     id: 36,
     SAA_Sample: "SAA0000036",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454679,
@@ -544,7 +548,7 @@ const Rows = [
   {
     id: 37,
     SAA_Sample: "SAA0000037",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454680,
@@ -558,7 +562,7 @@ const Rows = [
   {
     id: 38,
     SAA_Sample: "SAA0000038",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454681,
@@ -572,7 +576,7 @@ const Rows = [
   {
     id: 39,
     SAA_Sample: "SAA0000039",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454682,
@@ -586,7 +590,7 @@ const Rows = [
   {
     id: 40,
     SAA_Sample: "SAA0000040",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454683,
@@ -600,7 +604,7 @@ const Rows = [
   {
     id: 41,
     SAA_Sample: "SAA0000041",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454684,
@@ -614,7 +618,7 @@ const Rows = [
   {
     id: 42,
     SAA_Sample: "SAA0000042",
-    Labels: "No Result",
+    Labels: "No Result3",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "No",
     Read_hit_count: 454685,
@@ -628,7 +632,7 @@ const Rows = [
   {
     id: 43,
     SAA_Sample: "SAA0000043",
-    Labels: "No Result",
+    Labels: "No Result4",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454686,
@@ -642,7 +646,7 @@ const Rows = [
   {
     id: 44,
     SAA_Sample: "SAA0000044",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454687,
@@ -656,7 +660,7 @@ const Rows = [
   {
     id: 45,
     SAA_Sample: "SAA0000045",
-    Labels: "No Result",
+    Labels: "No Result2",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454688,
@@ -670,7 +674,7 @@ const Rows = [
   {
     id: 46,
     SAA_Sample: "SAA0000046",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454689,
@@ -684,7 +688,7 @@ const Rows = [
   {
     id: 47,
     SAA_Sample: "SAA0000047",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454690,
@@ -698,7 +702,7 @@ const Rows = [
   {
     id: 48,
     SAA_Sample: "SAA0000048",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454691,
@@ -712,7 +716,7 @@ const Rows = [
   {
     id: 49,
     SAA_Sample: "SAA0000049",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454692,
@@ -726,7 +730,7 @@ const Rows = [
   {
     id: 50,
     SAA_Sample: "SAA0000050",
-    Labels: "No Result",
+    Labels: "No Result1",
     location_hit: "54HO,54HO,54HO,54HO,54HO,54HO,",
     PP_hits: "Yes",
     Read_hit_count: 454693,
@@ -802,6 +806,7 @@ const useStyles = makeStyles({
   },
 });
 
+
 // const DataTable = ({ columns, rows, apiRef }) => {
 const DataTable = ({
   // columns,
@@ -837,7 +842,14 @@ const DataTable = ({
   const columns = useMemo(() => {
     return columnsAll;
   }, []);
-  const suggestions = ['Arkansas', 'Alabamba', 'Alaska', 'Arizona']
+
+  const [Labels, setLabels] = React.useState("");
+  const handleChange = (event) => {
+    setLabels(event.target.value);
+  };
+
+
+
   const columns1 = [
 
     {
@@ -862,16 +874,27 @@ const DataTable = ({
       headerName: "Labels",
       type: "string",
       headerAlign: "center",
-      width: "136",
-      editable: true,
+      width: "200",
+      editable: false,
       headerClassName: "data-grid-header",
       renderCell: (params) => {
         return (
           <>
-            <Chip data={suggestions} label="success" color="success" />
-          </>
+            <TextField
+              style={{ width: "110%", align: "center" }}
+              label="Eidt Labels"
+              onChange={handleChange}
+              select
+            >
+              <MenuItem value="Polie"><CheckIcon style={{ Color: "red", fontSize: 15 }} /> <Button style={{ align: "center", backgroundColor: "red", color: "white", fontSize: 12 }} > Polie</Button></MenuItem>
+              <MenuItem value="NotPolie"><CheckIcon style={{ Color: "white", fontSize: 15 }} /><Button style={{ align: "center", backgroundColor: "green", color: "white", fontSize: 12 }} > Not Polie</Button></MenuItem>
+              <MenuItem value="Reviewed" ><CheckIcon style={{ Color: "white", fontSize: 15 }} /><Button style={{ align: "center", backgroundColor: "blue", color: "white", fontSize: 12 }} > Reviewed</Button></MenuItem>
+              <MenuItem value="Needs Review" ><CheckIcon style={{ Color: "white", fontSize: 15 }} /><Button style={{ align: "center", backgroundColor: "yellow", color: "black", fontSize: 12 }} > Needs Reviewed</Button></MenuItem>
+            </TextField>
 
+          </>
         );
+
       }
 
     },
@@ -1198,10 +1221,12 @@ const DataTable = ({
         modalOpen={modalOpen}
         params={row_params}
       />
+
+
+
       {/* </ErrorBoundary> */}
     </div>
   );
 };
 
 export default DataTable;
-

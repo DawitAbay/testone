@@ -65,11 +65,7 @@ const MenuComp = ({ menuItems }) => {
   return (
     //<div style={{ backgroundColor: green[500] }}>
     <div
-      style={{
-        //backgroundColor: green[500],
-        textAlign: "center",
-        marginLeft: "-12px"
-      }}
+
     >
       <IconButton
         size="large"

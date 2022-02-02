@@ -39,7 +39,7 @@ const TextFieldComp = (props) => {
     // display: "block",
     // "& .MuiOutlinedInput-input": {
     "& .MuiInputBase-root-MuiOutlinedInput-root": {
-      bgcolor: "snow",
+      //bgcolor: "snow",
       border: "1px solid green",
       // backgroundColor: "snow",
     },
@@ -74,8 +74,8 @@ const TextFieldComp = (props) => {
       // onBlur={(event) => onBlur(event)}
       value={value}
       label={rest.label}
-      variant="outlined"
-      color="primary"
+      // variant="outlined"
+      // color="primary"
       required
       placeholder={rest.placeholder}
       // className={classes.textInput}

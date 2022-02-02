@@ -59,7 +59,7 @@ const SelectComp = (props) => {
         // input={<OutlinedInput label={rest.label} />}
         label={rest.label}
         variant="outlined"
-        color="primary"
+        // color="primary"
         required
         sx={fieldStyling}
         // sx={value ? { pb: 0 } : { pb: "10px" }}
