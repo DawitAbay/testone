@@ -874,7 +874,7 @@ const DataTable = ({
       headerName: "Labels",
       type: "string",
       headerAlign: "center",
-      width: "190",
+      width: "200",
       editable: false,
       headerClassName: "data-grid-header",
       renderCell: (params) => {
@@ -937,7 +937,7 @@ const DataTable = ({
       headerName: "Read Alignments to polio",
       type: "string",
       // headerAlign: "center",
-      width: "136",
+      width: "150",
       headerClassName: "data-grid-header",
       align: "left",
       renderCell: (params) => {
