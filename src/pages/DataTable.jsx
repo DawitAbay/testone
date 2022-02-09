@@ -958,9 +958,11 @@ const DataTable = ({
     {
       field: "Read_Alignments_to_GenBank_nr",
       headerName: "Read Alignments to GenBank nr",
-      width: "136",
+      width: "180",
       editable: true,
       align: "left",
+      fontSize: "1rem",
+      indent: true,
       type: "string",
       renderCell: (params) => {
 
